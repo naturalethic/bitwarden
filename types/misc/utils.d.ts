@@ -1,0 +1,32 @@
+import { I18nService } from '../abstractions/i18n.service';
+export declare class Utils {
+    static inited: boolean;
+    static isNativeScript: boolean;
+    static isNode: boolean;
+    static isBrowser: boolean;
+    static isMobileBrowser: boolean;
+    static global: any;
+    static tldEndingRegex: RegExp;
+    static init(): void;
+    static fromB64ToArray(str: string): Uint8Array;
+    static fromHexToArray(str: string): Uint8Array;
+    static fromUtf8ToArray(str: string): Uint8Array;
+    static fromByteStringToArray(str: string): Uint8Array;
+    static fromBufferToB64(buffer: ArrayBuffer): string;
+    static fromBufferToUtf8(buffer: ArrayBuffer): string;
+    static fromBufferToByteString(buffer: ArrayBuffer): string;
+    static fromBufferToHex(buffer: ArrayBuffer): string;
+    static fromUrlB64ToUtf8(b64Str: string): string;
+    static fromB64ToUtf8(b64Str: string): string;
+    static newGuid(): string;
+    static getHostname(uriString: string): string;
+    static getHost(uriString: string): string;
+    static getDomain(uriString: string): string;
+    static getQueryParams(uriString: string): Map<string, string>;
+    static getSortFunction(i18nService: I18nService, prop: string): (a: any, b: any) => any;
+    static isNullOrWhitespace(str: string): boolean;
+    private static validIpAddress;
+    private static isMobile;
+    private static getUrl;
+    private static getUrlObject;
+}

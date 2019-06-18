@@ -1,0 +1,30 @@
+import { EventEmitter, OnInit } from '@angular/core';
+import { CipherService } from '../../abstractions/cipher.service';
+import { CollectionService } from '../../abstractions/collection.service';
+import { I18nService } from '../../abstractions/i18n.service';
+import { PlatformUtilsService } from '../../abstractions/platformUtils.service';
+import { UserService } from '../../abstractions/user.service';
+import { Organization } from '../../models/domain/organization';
+import { CipherView } from '../../models/view/cipherView';
+import { CollectionView } from '../../models/view/collectionView';
+export declare class ShareComponent implements OnInit {
+    protected collectionService: CollectionService;
+    protected platformUtilsService: PlatformUtilsService;
+    protected i18nService: I18nService;
+    protected userService: UserService;
+    protected cipherService: CipherService;
+    cipherId: string;
+    organizationId: string;
+    onSharedCipher: EventEmitter<{}>;
+    formPromise: Promise<any>;
+    cipher: CipherView;
+    collections: CollectionView[];
+    organizations: Organization[];
+    protected writeableCollections: CollectionView[];
+    constructor(collectionService: CollectionService, platformUtilsService: PlatformUtilsService, i18nService: I18nService, userService: UserService, cipherService: CipherService);
+    ngOnInit(): Promise<void>;
+    load(): Promise<void>;
+    filterCollections(): void;
+    submit(): Promise<boolean>;
+    readonly canSave: boolean;
+}

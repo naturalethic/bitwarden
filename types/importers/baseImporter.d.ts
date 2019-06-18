@@ -1,0 +1,31 @@
+import { ImportResult } from '../models/domain/importResult';
+import { CipherView } from '../models/view/cipherView';
+import { LoginUriView } from '../models/view/loginUriView';
+import { FieldType } from '../enums/fieldType';
+export declare abstract class BaseImporter {
+    organization: boolean;
+    protected newLineRegex: RegExp;
+    protected passwordFieldNames: string[];
+    protected usernameFieldNames: string[];
+    protected notesFieldNames: string[];
+    protected uriFieldNames: string[];
+    protected parseXml(data: string): Document;
+    protected parseCsv(data: string, header: boolean): any[];
+    protected parseSingleRowCsv(rowData: string): any;
+    protected makeUriArray(uri: string | string[]): LoginUriView[];
+    protected fixUri(uri: string): string;
+    protected nameFromUrl(url: string): string;
+    protected isNullOrWhitespace(str: string): boolean;
+    protected getValueOrDefault(str: string, defaultValue?: string): string;
+    protected splitNewLine(str: string): string[];
+    protected getCardBrand(cardNum: string): "Visa" | "Mastercard" | "Amex" | "Discover" | "Diners Club" | "JCB";
+    protected setCardExpiration(cipher: CipherView, expiration: string): boolean;
+    protected moveFoldersToCollections(result: ImportResult): void;
+    protected querySelectorDirectChild(parentEl: Element, query: string): Element;
+    protected querySelectorAllDirectChild(parentEl: Element, query: string): Element[];
+    protected initLoginCipher(): CipherView;
+    protected cleanupCipher(cipher: CipherView): void;
+    protected processKvp(cipher: CipherView, key: string, value: string, type?: FieldType): void;
+    protected processFolder(result: ImportResult, folderName: string): void;
+    protected convertToNoteIfNeeded(cipher: CipherView): void;
+}

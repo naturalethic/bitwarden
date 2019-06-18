@@ -1,0 +1,1 @@
+{"version":3,"file":"treeNode.js","sourceRoot":"","sources":["../../../../src/models/domain/treeNode.ts"],"names":[],"mappings":";;AAAA,MAAa,QAAQ;IAKjB,YAAY,IAAO,EAAE,IAAY,EAAE,MAAS;QAF5C,aAAQ,GAAuB,EAAE,CAAC;QAG9B,IAAI,CAAC,MAAM,GAAG,MAAM,CAAC;QACrB,IAAI,CAAC,IAAI,GAAG,IAAI,CAAC;QACjB,IAAI,CAAC,IAAI,CAAC,IAAI,GAAG,IAAI,CAAC;IAC1B,CAAC;CACJ;AAVD,4BAUC"}

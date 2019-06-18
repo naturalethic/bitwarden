@@ -1,0 +1,30 @@
+import { View } from './view';
+import { Identity } from '../domain/identity';
+export declare class IdentityView implements View {
+    title: string;
+    middleName: string;
+    address1: string;
+    address2: string;
+    address3: string;
+    city: string;
+    state: string;
+    postalCode: string;
+    country: string;
+    company: string;
+    email: string;
+    phone: string;
+    ssn: string;
+    username: string;
+    passportNumber: string;
+    licenseNumber: string;
+    private _firstName;
+    private _lastName;
+    private _subTitle;
+    constructor(i?: Identity);
+    firstName: string;
+    lastName: string;
+    readonly subTitle: string;
+    readonly fullName: string;
+    readonly fullAddress: string;
+    readonly fullAddressPart2: string;
+}

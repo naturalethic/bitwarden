@@ -1,0 +1,38 @@
+import { CipherType } from '../../enums/cipherType';
+import { Cipher } from '../domain/cipher';
+import { AttachmentView } from './attachmentView';
+import { CardView } from './cardView';
+import { FieldView } from './fieldView';
+import { IdentityView } from './identityView';
+import { LoginView } from './loginView';
+import { PasswordHistoryView } from './passwordHistoryView';
+import { SecureNoteView } from './secureNoteView';
+import { View } from './view';
+export declare class CipherView implements View {
+    id: string;
+    organizationId: string;
+    folderId: string;
+    name: string;
+    notes: string;
+    type: CipherType;
+    favorite: boolean;
+    organizationUseTotp: boolean;
+    edit: boolean;
+    localData: any;
+    login: LoginView;
+    identity: IdentityView;
+    card: CardView;
+    secureNote: SecureNoteView;
+    attachments: AttachmentView[];
+    fields: FieldView[];
+    passwordHistory: PasswordHistoryView[];
+    collectionIds: string[];
+    revisionDate: Date;
+    constructor(c?: Cipher);
+    readonly subTitle: string;
+    readonly hasPasswordHistory: boolean;
+    readonly hasAttachments: boolean;
+    readonly hasOldAttachments: boolean;
+    readonly hasFields: boolean;
+    readonly passwordRevisionDisplayDate: Date;
+}

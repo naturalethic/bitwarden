@@ -1,0 +1,32 @@
+import { CryptoFunctionService } from '../abstractions/cryptoFunction.service';
+import { PlatformUtilsService } from '../abstractions/platformUtils.service';
+import { DecryptParameters } from '../models/domain/decryptParameters';
+import { SymmetricCryptoKey } from '../models/domain/symmetricCryptoKey';
+export declare class WebCryptoFunctionService implements CryptoFunctionService {
+    private win;
+    private platformUtilsService;
+    private crypto;
+    private subtle;
+    private isEdge;
+    private isIE;
+    private isOldSafari;
+    constructor(win: Window, platformUtilsService: PlatformUtilsService);
+    pbkdf2(password: string | ArrayBuffer, salt: string | ArrayBuffer, algorithm: 'sha256' | 'sha512', iterations: number): Promise<ArrayBuffer>;
+    hash(value: string | ArrayBuffer, algorithm: 'sha1' | 'sha256' | 'sha512' | 'md5'): Promise<ArrayBuffer>;
+    hmac(value: ArrayBuffer, key: ArrayBuffer, algorithm: 'sha1' | 'sha256' | 'sha512'): Promise<ArrayBuffer>;
+    compare(a: ArrayBuffer, b: ArrayBuffer): Promise<boolean>;
+    hmacFast(value: string, key: string, algorithm: 'sha1' | 'sha256' | 'sha512'): Promise<string>;
+    compareFast(a: string, b: string): Promise<boolean>;
+    aesEncrypt(data: ArrayBuffer, iv: ArrayBuffer, key: ArrayBuffer): Promise<ArrayBuffer>;
+    aesDecryptFastParameters(data: string, iv: string, mac: string, key: SymmetricCryptoKey): DecryptParameters<string>;
+    aesDecryptFast(parameters: DecryptParameters<string>): Promise<string>;
+    aesDecrypt(data: ArrayBuffer, iv: ArrayBuffer, key: ArrayBuffer): Promise<ArrayBuffer>;
+    rsaEncrypt(data: ArrayBuffer, publicKey: ArrayBuffer, algorithm: 'sha1' | 'sha256'): Promise<ArrayBuffer>;
+    rsaDecrypt(data: ArrayBuffer, privateKey: ArrayBuffer, algorithm: 'sha1' | 'sha256'): Promise<ArrayBuffer>;
+    rsaExtractPublicKey(privateKey: ArrayBuffer): Promise<ArrayBuffer>;
+    rsaGenerateKeyPair(length: 1024 | 2048 | 4096): Promise<[ArrayBuffer, ArrayBuffer]>;
+    randomBytes(length: number): Promise<ArrayBuffer>;
+    private toBuf;
+    private toByteString;
+    private toWebCryptoAlgorithm;
+}

@@ -1,0 +1,36 @@
+import { CipherType } from '../../enums/cipherType';
+import { CipherData } from '../data/cipherData';
+import { CipherView } from '../view/cipherView';
+import { Attachment } from './attachment';
+import { Card } from './card';
+import { CipherString } from './cipherString';
+import Domain from './domainBase';
+import { Field } from './field';
+import { Identity } from './identity';
+import { Login } from './login';
+import { Password } from './password';
+import { SecureNote } from './secureNote';
+export declare class Cipher extends Domain {
+    id: string;
+    organizationId: string;
+    folderId: string;
+    name: CipherString;
+    notes: CipherString;
+    type: CipherType;
+    favorite: boolean;
+    organizationUseTotp: boolean;
+    edit: boolean;
+    revisionDate: Date;
+    localData: any;
+    login: Login;
+    identity: Identity;
+    card: Card;
+    secureNote: SecureNote;
+    attachments: Attachment[];
+    fields: Field[];
+    passwordHistory: Password[];
+    collectionIds: string[];
+    constructor(obj?: CipherData, alreadyEncrypted?: boolean, localData?: any);
+    decrypt(): Promise<CipherView>;
+    toCipherData(userId: string): CipherData;
+}

@@ -1,0 +1,1 @@
+{"version":3,"file":"twoFactorEmailRequest.js","sourceRoot":"","sources":["../../../../src/models/request/twoFactorEmailRequest.ts"],"names":[],"mappings":";;AAAA,+EAA4E;AAE5E,MAAa,qBAAsB,SAAQ,yDAA2B;IAGlE,YAAY,KAAa,EAAE,kBAA0B;QACjD,KAAK,EAAE,CAAC;QACR,IAAI,CAAC,kBAAkB,GAAG,kBAAkB,CAAC;QAC7C,IAAI,CAAC,KAAK,GAAG,KAAK,CAAC;IACvB,CAAC;CACJ;AARD,sDAQC"}

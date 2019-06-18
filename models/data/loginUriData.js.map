@@ -1,0 +1,1 @@
+{"version":3,"file":"loginUriData.js","sourceRoot":"","sources":["../../../../src/models/data/loginUriData.ts"],"names":[],"mappings":";;AAIA,MAAa,YAAY;IAIrB,YAAY,IAAkB;QAF9B,UAAK,GAAiB,IAAI,CAAC;QAGvB,IAAI,IAAI,IAAI,IAAI,EAAE;YACd,OAAO;SACV;QACD,IAAI,CAAC,GAAG,GAAG,IAAI,CAAC,GAAG,CAAC;QACpB,IAAI,CAAC,KAAK,GAAG,IAAI,CAAC,KAAK,CAAC;IAC5B,CAAC;CACJ;AAXD,oCAWC"}

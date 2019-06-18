@@ -1,0 +1,1 @@
+{"version":3,"file":"cipherBulkMoveRequest.js","sourceRoot":"","sources":["../../../../src/models/request/cipherBulkMoveRequest.ts"],"names":[],"mappings":";;AAAA,MAAa,qBAAqB;IAI9B,YAAY,GAAa,EAAE,QAAgB;QACvC,IAAI,CAAC,GAAG,GAAG,GAAG,IAAI,IAAI,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,GAAG,CAAC;QAClC,IAAI,CAAC,QAAQ,GAAG,QAAQ,CAAC;IAC7B,CAAC;CACJ;AARD,sDAQC"}

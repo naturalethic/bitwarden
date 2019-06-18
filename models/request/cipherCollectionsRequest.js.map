@@ -1,0 +1,1 @@
+{"version":3,"file":"cipherCollectionsRequest.js","sourceRoot":"","sources":["../../../../src/models/request/cipherCollectionsRequest.ts"],"names":[],"mappings":";;AAAA,MAAa,wBAAwB;IAGjC,YAAY,aAAuB;QAC/B,IAAI,CAAC,aAAa,GAAG,aAAa,IAAI,IAAI,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,aAAa,CAAC;IACpE,CAAC;CACJ;AAND,4DAMC"}

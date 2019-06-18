@@ -1,0 +1,30 @@
+import { ApiService } from '../abstractions/api.service';
+import { AppIdService } from '../abstractions/appId.service';
+import { EnvironmentService } from '../abstractions/environment.service';
+import { LockService } from '../abstractions/lock.service';
+import { NotificationsService as NotificationsServiceAbstraction } from '../abstractions/notifications.service';
+import { SyncService } from '../abstractions/sync.service';
+import { UserService } from '../abstractions/user.service';
+export declare class NotificationsService implements NotificationsServiceAbstraction {
+    private userService;
+    private syncService;
+    private appIdService;
+    private apiService;
+    private lockService;
+    private logoutCallback;
+    private signalrConnection;
+    private url;
+    private connected;
+    private inited;
+    private inactive;
+    private reconnectTimer;
+    constructor(userService: UserService, syncService: SyncService, appIdService: AppIdService, apiService: ApiService, lockService: LockService, logoutCallback: () => Promise<void>);
+    init(environmentService: EnvironmentService): Promise<void>;
+    updateConnection(sync?: boolean): Promise<void>;
+    reconnectFromActivity(): Promise<void>;
+    disconnectFromInactivity(): Promise<void>;
+    private processNotification;
+    private reconnect;
+    private isAuthedAndUnlocked;
+    private random;
+}

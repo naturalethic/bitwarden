@@ -1,0 +1,32 @@
+import { CipherService } from '../abstractions/cipher.service';
+import { CollectionService } from '../abstractions/collection.service';
+import { CryptoService } from '../abstractions/crypto.service';
+import { FolderService } from '../abstractions/folder.service';
+import { LockService as LockServiceAbstraction } from '../abstractions/lock.service';
+import { MessagingService } from '../abstractions/messaging.service';
+import { PlatformUtilsService } from '../abstractions/platformUtils.service';
+import { SearchService } from '../abstractions/search.service';
+import { StorageService } from '../abstractions/storage.service';
+import { UserService } from '../abstractions/user.service';
+export declare class LockService implements LockServiceAbstraction {
+    private cipherService;
+    private folderService;
+    private collectionService;
+    private cryptoService;
+    private platformUtilsService;
+    private storageService;
+    private messagingService;
+    private searchService;
+    private userService;
+    private lockedCallback;
+    pinLocked: boolean;
+    private inited;
+    constructor(cipherService: CipherService, folderService: FolderService, collectionService: CollectionService, cryptoService: CryptoService, platformUtilsService: PlatformUtilsService, storageService: StorageService, messagingService: MessagingService, searchService: SearchService, userService: UserService, lockedCallback?: () => Promise<void>);
+    init(checkOnInterval: boolean): void;
+    isLocked(): Promise<boolean>;
+    checkLock(): Promise<void>;
+    lock(allowSoftLock?: boolean): Promise<void>;
+    setLockOption(lockOption: number): Promise<void>;
+    isPinLockSet(): Promise<[boolean, boolean]>;
+    clear(): Promise<any>;
+}
